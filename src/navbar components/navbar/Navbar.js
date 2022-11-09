@@ -2,27 +2,30 @@ import "./navbar.css"
 import Home from "../home/Home";
 import MyBook from "../MyBooks/MyBook";
 import BookCategories from "../BookCategories/BookCategories";
-import { BrowserRouter as Router,Routes,Route,Link} from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import Signup from "../signup/Signup";
 
 const Navbar = () =>{
 
     
 
     return(
-        // <h1></h1>
+     
         <Router>
 
 <nav className="navbar">
             <div>
-                <Link to="/home">HOME</Link>
-                <Link to="/myBook">MY BOOKS</Link>
-                <Link to="/bookCategories">BOOK CATEGORIES</Link>
+                    <Link to="/">HOME</Link>
+                    <Link to="/bookCategories">BOOK CATEGORIES</Link>
+                    <Link to="/signUp">SIGN UP</Link>
+                    <Link to="/myBook">MY BOOKS</Link>
             </div>
         </nav>
 
               <Routes>
-          <Route exact path="/home" element={<Home />} />
-          <Route path="/myBook" element={<MyBook />} />
+                <Route exact path="/" element={<Home />} />
+                <Route path="/myBook" element={<MyBook />} />
+                <Route path="/signUp" element={<Signup/>} />
           <Route path="/bookCategories" element={<BookCategories />} />
         </Routes>
         </Router>
