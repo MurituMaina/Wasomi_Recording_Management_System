@@ -1,3 +1,31 @@
-h1{
-    color: red;
+@import url('https://fonts.googleapis.com/css2?family=Zen+Antique&display=swap');
+
+.landingPage{
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 500px;
+    background-image: url(/home/katerina/Documents/DEVELOPMENT/phase3/project/Wasomi_Recording_Management_System_Front_end/src/img/pexels-element-digital-1470170.jpg);
 }
+
+.landingPage h1{
+    font-family: 'Zen Antique', serif;
+    font-size: 50px;
+    margin-left: 1050px;
+    color: rgb(20, 31, 31);
+}
+
+.landingPage p{
+    margin-left: 1050px;
+    font-family: 'Zen Antique', serif;
+    font-size: 15px;
+    color:  #0d0e0d;
+    background: rgb(255,218,185);
+    border-radius: 30px;
+    border: 2px solid #508055;
+    border-style: dotted;
+    padding: 10px;
+    
+}
+
+
