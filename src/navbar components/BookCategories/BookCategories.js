@@ -49,6 +49,5 @@ const Dropdown = ({ trigger, menu }) => {
       ) : null}
     </div>
   );
-};
 
 export default BookCategories;
