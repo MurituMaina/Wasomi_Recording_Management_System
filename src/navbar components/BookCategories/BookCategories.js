@@ -1,13 +1,13 @@
 import "./bookCategories.css"
 import * as React from 'react';
 
-const App = () => {
+const BookCategories = () => {
   const handleMenuOne = () => {
-    console.log('clicked one');
+    console.log("clicked one");
   };
 
   const handleMenuTwo = () => {
-    console.log('clicked two');
+    console.log("clicked two");
   };
 
   return (

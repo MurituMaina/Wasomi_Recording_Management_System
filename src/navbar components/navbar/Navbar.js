@@ -11,8 +11,7 @@ const Navbar = () => {
       <nav className="navbar">
         <div>
           <Link to="/">HOME</Link>
-          <Link to="/bookCategories">BOOK CATEGORIES</Link>
-
+          <Link to="/BookCategories">BOOK CATEGORIES</Link>
           <Link to="/myBook">MY BOOKS</Link>
           <Link to="/signUp">SIGN UP</Link>
         </div>
@@ -21,7 +20,7 @@ const Navbar = () => {
       <Routes>
         <Route exact path="/" element={<Home />} />
         <Route path="/myBook" element={<MyBook />} />
-        <Route path="/bookCategories" element={<BookCategories />} />
+        <Route path="/BookCategories" element={<BookCategories />} />
         <Route path="/signUp" element={<Signup />} />
       </Routes>
     </Router>
