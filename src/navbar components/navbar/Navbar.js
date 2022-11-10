@@ -3,7 +3,8 @@ import Home from "../home/Home";
 import MyBook from "../MyBooks/MyBook";
 import BookCategories from "../BookCategories/BookCategories";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
-import Signup from "../signup/Signup";
+// import Signup from "../signup/Signup";
+import SignupPage from "../signup/SignupPage";
 
 const Navbar = () => {
   return (
@@ -13,7 +14,9 @@ const Navbar = () => {
           <Link to="/">HOME</Link>
           <Link to="/BookCategories">BOOK CATEGORIES</Link>
           <Link to="/myBook">MY BOOKS</Link>
-          <Link to="/signUp">SIGN UP</Link>
+          <Link to="/signuppage">SIGN UP</Link>
+          
+
         </div>
       </nav>
 
@@ -21,7 +24,7 @@ const Navbar = () => {
         <Route exact path="/" element={<Home />} />
         <Route path="/myBook" element={<MyBook />} />
         <Route path="/BookCategories" element={<BookCategories />} />
-        <Route path="/signUp" element={<Signup />} />
+        <Route path="/signuppage" element={<SignupPage />} />
       </Routes>
     </Router>
   );

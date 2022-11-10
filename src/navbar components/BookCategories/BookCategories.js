@@ -1,23 +1,83 @@
-import "./bookCategories.css"
-import * as React from 'react';
+import "./bookCategories.css";
+import * as React from "react";
+import { useState } from "react";
+// import { useEffect } from "react";
+
+const urlBooks = "http://localhost:9292/books";
 
 const BookCategories = () => {
+  const [categories, setCategories] = useState({});
+  // useEffect(() => {
+    fetch(urlBooks)
+      .then((resp) => resp.json())
+      .then((data) =>
+        // console.log(data)
+
+          setCategories(data)
+      );
+  // })[categories];
+
   const handleMenuOne = () => {
-    console.log("clicked one");
+    // fetch("http://localhost:9292/books/Science")
+    fetch(urlBooks)
+      .then((resp) => resp.json())
+      .then((data) =>
+        // setCategories(data)
+        console.log(data)
+      );
   };
 
   const handleMenuTwo = () => {
-    console.log("clicked two");
+    fetch(urlBooks)
+      .then((resp) => resp.json())
+      .then((data) => setCategories(data));
+  };
+
+  const handleMenuThree = () => {
+    fetch(urlBooks)
+      .then((resp) => resp.json())
+      .then(
+        (data) => setCategories(data)
+        // console.log(data)
+      );
   };
 
   return (
-    <Dropdown
-      trigger={<button>Dropdown</button>}
-      menu={[
-        <button onClick={handleMenuOne}>Menu 1</button>,
-        <button onClick={handleMenuTwo}>Menu 2</button>,
-      ]}
-    />
+    <>
+      <div className="booklist">
+        <h1> To select Book click on a Category</h1>
+
+        <Dropdown
+          trigger={<button className="dropdown_btn">Categories</button>}
+          menu={[
+            <button onClick={handleMenuOne}>Science</button>,
+            <button onClick={handleMenuTwo}>Fiction</button>,
+            <button onClick={handleMenuThree}>Romantic</button>,
+          ]}
+        />
+      </div>
+
+      <div>
+        <table>
+          <thead>
+            <tr>
+              <th>Title</th>
+            </tr>
+            <tr>
+              <th>Category</th>
+            </tr>
+          </thead>
+          <tbody>
+            {categories.map((data) => (
+              <tr key={data.id}>
+                <td>{data.title}</td>
+                <td>{data.category}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </>
   );
 };
 

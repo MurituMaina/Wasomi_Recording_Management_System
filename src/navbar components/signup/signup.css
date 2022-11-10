@@ -1,11 +1,18 @@
-h1{
+h1 {
     color: aquamarine;
 }
 
-Form{
-    justify-content:center ;
+Form {
+    justify-content: center;
 }
 
 .bookingForm {
-    justify-content: center;
+    margin-top: 100px;
+    margin-left: 240px;
+    float: left;
+    border-radius: 10px;
+    width: 600px;
+    text-align: center;
+    background-color: white;
+
 }
