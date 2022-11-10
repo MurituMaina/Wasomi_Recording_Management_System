@@ -3,7 +3,13 @@ import "./myBook.css"
 const MyBook = () =>{
 
     return(
-        <h1>my books</h1>
+       <div className="myBookPage">
+         <h1>My Books</h1>
+         <div className="selectedBooks">
+            <h2>shelf</h2>
+
+         </div>
+       </div>
     );
 }
 
