@@ -1,8 +1,8 @@
-# Getting Started with Create React App
+# Wasomi Recording Management System
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+In our current age, readers yarn for platform to get to read their favorite books and get to track which books they have read.
 
-## Available Scripts
+## 
 
 In the project directory, you can run:
 

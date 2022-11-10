@@ -68,12 +68,12 @@ const BookCategories = () => {
             </tr>
           </thead>
           <tbody>
-            {categories.map((data) => (
-              <tr key={data.id}>
+            {/* {categories.map((data,index) => {
+              <tr key={index}>
                 <td>{data.title}</td>
                 <td>{data.category}</td>
-              </tr>
-            ))}
+              </tr>;
+            })} */}
           </tbody>
         </table>
       </div>
