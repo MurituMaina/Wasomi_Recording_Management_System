@@ -1,3 +1,108 @@
-h1{
+h1 {
+    color: #508055;
+}
+
+Form {
+    justify-content: center;
+}
+
+.bookingForm {
+    margin-top: 100px;
+    margin-left: 350px;
+    float: left;
+    border-radius: 10px;
+    width: 600px;
+    height: 400px;
+    text-align: center;
+    background-color: white;
+    font-weight: bold;
+    font-size: 20px;
+
+}
+
+button {
+    background-color: #508055;
+    color: white;
+    font-size: 20px;
+    padding: 10px 20px;
+    border-radius: 20px;
+    box-shadow: 0px 0px 2px 2px rgb(0, 0, 0);
+}
+
+button:hover {
+    background-color: bisque;
+    transition: 0.7s;
+    color: black;
+}
+
+input[type=text] {
+    width: 40%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=email] {
+    width: 40%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+/* h1 {
     color: aquamarine;
 }
+
+Form {
+    justify-content: center;
+}
+
+.bookingForm {
+    margin-top: 100px;
+    margin-left: 240px;
+    float: left;
+    border-radius: 10px;
+    width: 600px;
+    text-align: center;
+    background-color: white;
+
+}
+
+h1 {
+    color: #508055;
+}
+
+Form {
+    justify-content: center;
+}
+
+.bookingForm {
+    margin-top: 20px;
+    margin-left: 240px;
+    float: left;
+    border-radius: 10px;
+    width: 600px;
+    height: 400px;
+    text-align: center;
+    background-color: white;
+    font-weight: bold;
+    font-size: 20px;
+
+}
+
+button {
+    background-color: #508055;
+    color: white;
+    font-size: 20px;
+    padding: 10px 20px;
+    border-radius: 20px;
+    box-shadow: 0px 0px 2px 2px rgb(0, 0, 0);
+}
+
+/* button:hover {
+    odx-ygsc-nyt */     
