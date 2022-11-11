@@ -1,39 +1,31 @@
 import "./bookCategories.css";
 import * as React from "react";
-import { useState } from "react";
+// import { useState } from "react";
 // import { useEffect } from "react";
 
 const urlBooks = "http://localhost:9292/books";
 
 const BookCategories = () => {
-  const [categories, setCategories] = useState({});
+  // const [categories, setCategories] = useState({});
   // useEffect(() => {
-    fetch(urlBooks)
-      .then((resp) => resp.json())
-      .then((data) =>
-        // console.log(data)
+  
+    function setCategories(data) {
+      return data.map((key) => (
+        console.log(key)
+      ))
+    }
+  
+  fetch(urlBooks)
+    .then((resp) => resp.json())
+    .then((data) =>
+      // console.log(data)
 
-          setCategories(data)
-      );
+      setCategories(data)
+    );
   // })[categories];
 
   const handleMenuOne = () => {
     // fetch("http://localhost:9292/books/Science")
-    fetch(urlBooks)
-      .then((resp) => resp.json())
-      .then((data) =>
-        // setCategories(data)
-        console.log(data)
-      );
-  };
-
-  const handleMenuTwo = () => {
-    fetch(urlBooks)
-      .then((resp) => resp.json())
-      .then((data) => setCategories(data));
-  };
-
-  const handleMenuThree = () => {
     fetch(urlBooks)
       .then((resp) => resp.json())
       .then(
@@ -41,6 +33,25 @@ const BookCategories = () => {
         // console.log(data)
       );
   };
+
+  // const handleMenuTwo = () => {
+  //   fetch(urlBooks)
+  //     .then((resp) => resp.json())
+  //     .then((data) =>
+  //       // setCategories(data)
+  //       console.log(data)
+  //     );
+  // };
+
+  // const handleMenuThree = () => {
+  //   fetch(urlBooks)
+  //     .then((resp) => resp.json())
+  //     .then(
+  //       (data) =>
+  //       // setCategories(data)
+  //       console.log(data)
+  //     );
+  // };
 
   return (
     <>
@@ -51,8 +62,16 @@ const BookCategories = () => {
           trigger={<button className="dropdown_btn">Categories</button>}
           menu={[
             <button onClick={handleMenuOne}>Science</button>,
-            <button onClick={handleMenuTwo}>Fiction</button>,
-            <button onClick={handleMenuThree}>Romantic</button>,
+            <button
+            // onClick={handleMenuTwo}
+            >
+              Fiction
+            </button>,
+            <button
+            // onClick={handleMenuThree}
+            >
+              Romantic
+            </button>,
           ]}
         />
       </div>
@@ -68,12 +87,13 @@ const BookCategories = () => {
             </tr>
           </thead>
           <tbody>
-            {/* {categories.map((data,index) => {
-              <tr key={index}>
+          {setCategories}
+            {/* {categories.map((data) => (
+              <tr key={data.id}>
                 <td>{data.title}</td>
                 <td>{data.category}</td>
-              </tr>;
-            })} */}
+              </tr>
+            ))} */}
           </tbody>
         </table>
       </div>
