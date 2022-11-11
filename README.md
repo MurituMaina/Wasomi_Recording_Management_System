@@ -1,70 +1,41 @@
 # Wasomi Recording Management System
+# Library Management System.
+##  Description
 
-In our current age, readers yarn for platform to get to read their favorite books and get to track which books they have read.
+This is a library management web application which allows users to sign up, search and select their desired genre of books and add it to their shelves. This web application has a variety of categories with multiple books that can be chosen by the user at his or her convenience. 
 
-## 
+---
+## Technologies Used
 
-In the project directory, you can run:
+-REACTJS - Used to build an interactive user interface efficiently.
 
-### `npm start`
+-BOOTSTRAP-CSS - which was used to style the User Interface.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+-POSTGRES - Safely store database information.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+-RUBY - Build and configure all Back-end code.
 
-### `npm test`
+-SINATRA -Back-end configuration.
+---
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Installation Process
+-Clone this repo to your local machine.
 
-### `npm run build`
+-Run npm install to install all dependencies.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+-Run npm start
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## LICENSE
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+MIT License
+Copyright (c) [2022] 
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
-### `npm run eject`
+## AUTHOR
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Vincent Maina
+Catherine Otondi
+Ziro Ngowwa
+Rebecca Njeri
+Michael Kamau
+Nicholas Ndikwe

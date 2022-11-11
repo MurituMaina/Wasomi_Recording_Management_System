@@ -29,7 +29,7 @@ function Signup() {
     <div>
       <div className="bookingForm">
         <div>
-          <p> Register to Access books</p>
+          <h1> Register to Access books</h1>
         </div>
         <h2>Sign Up</h2>
         <div className="color-overlay d-flex justify-content-center algin-item-center">

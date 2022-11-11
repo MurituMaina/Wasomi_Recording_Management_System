@@ -8,7 +8,7 @@ h1{
     background-color: red ;
   }
   .booklist{
-    margin-left: 700px;
+    margin-left: 200px;
     margin-top: 50px;
     float: left;
     
@@ -50,3 +50,9 @@ h1{
     font: inherit;
     cursor: pointer;
   }
+
+  .table{
+    float:left;
+    margin-top:300px;
+  }
+  

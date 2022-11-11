@@ -1,36 +1,36 @@
 import "./bookCategories.css";
 import * as React from "react";
 // import { useState } from "react";
-// import { useEffect } from "react";
+import { useEffect } from "react";
 
 const urlBooks = "http://localhost:9292/books";
 
 const BookCategories = () => {
   // const [categories, setCategories] = useState({});
-  // useEffect(() => {
-  
-    function setCategories(data) {
-      return data.map((key) => (
-        console.log(key)
-      ))
-    }
-  
-  fetch(urlBooks)
-    .then((resp) => resp.json())
-    .then((data) =>
-      // console.log(data)
+  useEffect(() => {
+    // function setCategories(data) {
+    //   return data.map((key) => (
+    //     console.log(key)
+    //   ))
+    // }
 
-      setCategories(data)
-    );
-  // })[categories];
+    fetch(urlBooks)
+      .then((resp) => resp.json())
+      .then((data) =>
+        console.log(data)
+
+        // setCategories(data)
+      );
+  }, []);
 
   const handleMenuOne = () => {
     // fetch("http://localhost:9292/books/Science")
     fetch(urlBooks)
       .then((resp) => resp.json())
       .then(
-        (data) => setCategories(data)
-        // console.log(data)
+        (data) => 
+        // setCategories(data)
+        console.log(data)
       );
   };
 
@@ -63,11 +63,13 @@ const BookCategories = () => {
           menu={[
             <button onClick={handleMenuOne}>Science</button>,
             <button
+            value = "Science"
             // onClick={handleMenuTwo}
             >
               Fiction
             </button>,
             <button
+            value = "Fiction"
             // onClick={handleMenuThree}
             >
               Romantic
@@ -81,13 +83,10 @@ const BookCategories = () => {
           <thead>
             <tr>
               <th>Title</th>
-            </tr>
-            <tr>
               <th>Category</th>
             </tr>
           </thead>
           <tbody>
-          {setCategories}
             {/* {categories.map((data) => (
               <tr key={data.id}>
                 <td>{data.title}</td>
