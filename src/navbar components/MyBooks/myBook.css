@@ -14,3 +14,12 @@ body {
     color: rgb(20, 31, 31);
     background: rgb(255, 218, 185);
 }
+.books{
+    background-color: white;
+    border: solid black 2px;
+    margin: auto;
+    width: 500px;
+}
+.books th,td,tr{
+    border: solid black 2px;
+}

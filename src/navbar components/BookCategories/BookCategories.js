@@ -1,12 +1,14 @@
 import "./bookCategories.css";
+import BookCard from "./BookCard";
 import * as React from "react";
-// import { useState } from "react";
+import { useState } from "react";
 import { useEffect } from "react";
 
 const urlBooks = "http://localhost:9292/books";
 
 const BookCategories = () => {
-  // const [categories, setCategories] = useState({});
+  const [categories, setCategories] = useState({})
+  // const [books, setBooks] = useState([]);
   useEffect(() => {
     // function setCategories(data) {
     //   return data.map((key) => (
@@ -16,19 +18,21 @@ const BookCategories = () => {
 
     fetch(urlBooks)
       .then((resp) => resp.json())
-      .then((data) =>
-        console.log(data)
-
-        // setCategories(data)
-      );
+      .then((data) => {
+        console.log(data);
+        data.map((data) => {
+          // console.log(data.title);
+          // return setBooks(data.title);
+          return setCategories(data);
+        });
+      });
   }, []);
 
   const handleMenuOne = () => {
     // fetch("http://localhost:9292/books/Science")
     fetch(urlBooks)
       .then((resp) => resp.json())
-      .then(
-        (data) => 
+      .then((data) =>
         // setCategories(data)
         console.log(data)
       );
@@ -63,14 +67,14 @@ const BookCategories = () => {
           menu={[
             <button onClick={handleMenuOne}>Science</button>,
             <button
-            value = "Science"
-            // onClick={handleMenuTwo}
+              value="Science"
+              // onClick={handleMenuTwo}
             >
               Fiction
             </button>,
             <button
-            value = "Fiction"
-            // onClick={handleMenuThree}
+              value="Fiction"
+              // onClick={handleMenuThree}
             >
               Romantic
             </button>,
@@ -79,22 +83,16 @@ const BookCategories = () => {
       </div>
 
       <div>
-        <table>
-          <thead>
-            <tr>
-              <th>Title</th>
-              <th>Category</th>
-            </tr>
-          </thead>
-          <tbody>
-            {/* {categories.map((data) => (
-              <tr key={data.id}>
-                <td>{data.title}</td>
-                <td>{data.category}</td>
-              </tr>
-            ))} */}
-          </tbody>
-        </table>
+  {categories.forEach((book) => {
+    return(
+      <BookCard
+        key={book.id}
+        book={book}
+      />
+    )
+  })}
+      
+     
       </div>
     </>
   );
