@@ -1,10 +1,16 @@
-/* h1{
-    color: red;
-} */
-
-
 body {
     background: rgb(255, 218, 185);
+}
+.add_book_form{
+    background-color: green;
+}
+.add_book_form button{
+    size: 20px;
+}
+.book_register{
+background-color: red;
+width: 1000px;
+
 }
 
 .myBookPage h1 {
@@ -14,12 +20,23 @@ body {
     color: rgb(20, 31, 31);
     background: rgb(255, 218, 185);
 }
-.books{
+
+.books {
     background-color: white;
     border: solid black 2px;
     margin: auto;
-    width: 500px;
+    margin-left: 100px;
+    width: 450px;
 }
-.books th,td,tr{
+
+.books th,
+td,
+tr {
     border: solid black 2px;
+}
+
+.delete_book {
+
+    padding: none;
+    font-size: 10px;
 }
