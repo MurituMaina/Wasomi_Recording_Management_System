@@ -10,19 +10,10 @@ const BookCategories = () => {
   const [categories, setCategories] = useState({})
   // const [books, setBooks] = useState([]);
   useEffect(() => {
-    // function setCategories(data) {
-    //   return data.map((key) => (
-    //     console.log(key)
-    //   ))
-    // }
-
     fetch(urlBooks)
       .then((resp) => resp.json())
       .then((data) => {
         console.log(data);
-        data.map((data) => {
-          // console.log(data.title);
-          // return setBooks(data.title);
           return setCategories(data);
         });
       });
