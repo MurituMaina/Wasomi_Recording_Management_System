@@ -1,35 +1,63 @@
-
 import "./myBook.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { Navigate } from "react-router";
 
 const MyBook = () => {
-  const [books, setBooks] = useState("")
-  const[category, setCategory] = useState("")
-  fetch("http://localhost:9292/shelves/1")
-  .then((res) => res.json())
-  .then((data) => {
-    console.log(data);
-    return setBooks(data.book_title),
-    setCategory(data.book_category)
-  })
+  const [books, setBooks] = useState([]);
+  const [bookId, setBookId] = useState();
+  // const [update, setUpdate] = useState(false)
+  useEffect(() => {
+    fetch("http://localhost:9292/shelves")
+      .then((res) => res.json())
+      .then((data) => {
+        return setBooks(data);
+      });
+  }, []);
+  function deleteBooks() {
+    console.log(bookId);
+    fetch(`http://localhost:9292/shelves/${bookId}`, {
+      method: "DELETE",
+    })
+      .then((res) => res.json())
+      .then((data) => console.log(data));
+      fetch("http://localhost:9292/shelves")
+        .then((res) => res.json())
+        .then((data) => {
+          return setBooks(data);
+        });
+  }
   return (
     <div className="myBookPage">
       <h1>My Books</h1>
       <div className="selectedBooks">
-        <h2>shelf</h2>
+        <h2>Shelf - Current Reading List</h2>
         <table className="books">
           <thead>
             <tr>
               <th>Title</th>
               <th>Category</th>
-              {/* <th>UserName/</th> */}
+              <th>Delete Book</th>
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>{books}</td>
-              <td>{category}</td>
-            </tr>
+            {books.map((book) => {
+              return (
+                <tr key={book.id}>
+                  <td>{book.book_title}</td>
+                  <td>{book.book_category}</td>
+                  <td>
+                    <button
+                      onClick={(e) => {
+                        return setBookId(book.id), deleteBooks();
+                      }}
+                      className="delete_book"
+                    >
+                      Delete
+                    </button>
+                  </td>
+                </tr>
+              );
+            })}
           </tbody>
         </table>
       </div>
