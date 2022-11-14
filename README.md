@@ -1,7 +1,7 @@
 # Wasomi Recording Management System
-# Library Management System.
+# Read Books Management System.
 ##  Description
-
+Website - <link>https://wasomi-rms-fr.netlify.app/</Link>
 This is a library management web application which allows users to sign up, search and select their desired genre of books and add it to their shelves. This web application has a variety of categories with multiple books that can be chosen by the user at his or her convenience. 
 
 ---
@@ -33,9 +33,9 @@ Permission is hereby granted, free of charge, to any person obtaining a copy of 
 
 ## AUTHOR
 
-Vincent Maina
-Catherine Otondi
-Ziro Ngowwa
-Rebecca Njeri
-Michael Kamau
-Nicholas Ndikwe
+Vincent Maina - Scrum Master
+Catherine Otondi  - FullStack Developer
+Ziro Ngowwa  - FullStack Developer
+Rebecca Njeri - FullStack Developer
+Michael Kamau - FullStack Developer
+Nicholas Ndikwe  - FullStack Developer
