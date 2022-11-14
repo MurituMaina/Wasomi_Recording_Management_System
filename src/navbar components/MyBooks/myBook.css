@@ -34,6 +34,9 @@ td,
 tr {
     border: solid black 2px;
 }
+td{
+    color: red;
+}
 
 .delete_book {
 

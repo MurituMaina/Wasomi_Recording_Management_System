@@ -1,24 +1,30 @@
 import "./myBook.css";
 import { useEffect, useState } from "react";
+import { Navigate } from "react-router";
 
 const MyBook = () => {
   const [books, setBooks] = useState([]);
   const [bookId, setBookId] = useState();
+  // const [update, setUpdate] = useState(false)
   useEffect(() => {
     fetch("http://localhost:9292/shelves")
       .then((res) => res.json())
       .then((data) => {
-        // console.log(data);
         return setBooks(data);
       });
-  },[]);
-  function deleteBooks(book) {
-    console.log(bookId)
+  }, []);
+  function deleteBooks() {
+    console.log(bookId);
     fetch(`http://localhost:9292/shelves/${bookId}`, {
       method: "DELETE",
     })
       .then((res) => res.json())
       .then((data) => console.log(data));
+      fetch("http://localhost:9292/shelves")
+        .then((res) => res.json())
+        .then((data) => {
+          return setBooks(data);
+        });
   }
   return (
     <div className="myBookPage">
@@ -40,9 +46,12 @@ const MyBook = () => {
                   <td>{book.book_title}</td>
                   <td>{book.book_category}</td>
                   <td>
-                    <button onClick={e => {
-                      return (setBookId(book.id),
-                      deleteBooks())}} className="delete_book">
+                    <button
+                      onClick={(e) => {
+                        return setBookId(book.id), deleteBooks();
+                      }}
+                      className="delete_book"
+                    >
                       Delete
                     </button>
                   </td>

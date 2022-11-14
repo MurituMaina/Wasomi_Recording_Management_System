@@ -11,10 +11,11 @@ const BookCard = ({ categories }) => {
   useEffect(() => {
     return () => {};
   }, [book_title, book_category, book_id, user_id]);
-  const addBookToShelf = (book) => {
+  const addBookToShelf = () => {
     console.log("working before click");
     const shelfUrl = "http://localhost:9292/shelves";
     const newShelf = { book_title, book_category, book_id, user_id };
+    console.log(book_title, book_category, book_id, user_id);
 
     console.log(newShelf);
     fetch(shelfUrl, {
@@ -46,7 +47,11 @@ const BookCard = ({ categories }) => {
               <td>
                 <button
                   onClick={(e) => {
+                     console.log(book.title);
+                     console.log(book.category);
+                     console.log(book.id);
                     return (
+                     
                       setBookTitle(book.title),
                       setBookCategory(book.category),
                       setBookId(book.id),
