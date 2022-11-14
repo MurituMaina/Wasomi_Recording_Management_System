@@ -11,18 +11,18 @@ const AddBook = ({ trigger, form }) => {
        onClick: handleOpen,
      })}
      {open ? (
-       <ul className="form">
+       <div className="form">
          {form.map((formItem, index) => (
-           <li key={index} className="form-item">
+           <div key={index} className="form-item">
              {React.cloneElement(formItem, {
                onClick: () => {
                  formItem.props.onClick();
                  setOpen(false);
                },
              })}
-           </li>
+           </div>
          ))}
-       </ul>
+       </div>
      ) : null}
    </div>
  );

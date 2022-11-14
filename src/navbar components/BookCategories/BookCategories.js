@@ -40,10 +40,10 @@ const BookCategories = () => {
   const handleFiction = () => {
     fetch(`${urlBooks}/Fiction`)
       .then((resp) => resp.json())
-      .then((data) =>
-        // setCategories(data)
-        console.log(data)
-      );
+      .then((data) => {
+        console.log(data);
+        return setCategories(data);
+      });
   };
 
   const handleRomantic = () => {
@@ -56,6 +56,19 @@ const BookCategories = () => {
       );
   };
 
+  const handleSubmit = () => {
+    const urlUsers = "http://localhost:9292/books ";
+    const newData = { title, category };
+    console.log(newData);
+    fetch(urlUsers, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(newData),
+    }).then(() => console.log("Book added to bookList"));
+    setTitle("")
+    setCategory("")
+    // navigate("/BookCategories");
+  };
   return (
     <>
       <div className="booklist">
@@ -66,13 +79,13 @@ const BookCategories = () => {
           menu={[
             <button className="booklist" onClick={handleMenuAll}>
               All
-            </button>,<br />,
+            </button>,
             <button className="booklist" onClick={handleScience}>
               Science
-            </button>,<br />,
+            </button>,
             <button value="Science" onClick={handleFiction}>
               Fiction
-            </button>,<br />,
+            </button>,
             <button value="Fiction" onClick={handleRomantic}>
               Romantic
             </button>,
@@ -81,10 +94,47 @@ const BookCategories = () => {
       </div>
 
       <div>
-        {console.log(categories) &&
-          categories.map((book) => {
-          return <BookCard key={book.id} book={book} />;
-        })}
+        <BookCard categories={categories} />
+      </div>
+      <div>
+        <AddBook
+          trigger={<button className="add_book_form">Add Book</button>}
+          form={[
+            <form
+              onSubmit={(e) => {
+                e.preventDefault();
+                handleSubmit();
+              }}
+            >
+              <h2>Add another Book</h2>
+              <label> Book Title:</label>
+              <input
+                type="text"
+                placeholder="Enter Title"
+                value={title}
+                onChange={(e) => setTitle(e.target.value)}
+              />{" "}
+              <br />
+              <label> Book Category:</label>
+              <input
+                type="text"
+                placeholder="Enter Title"
+                value={category}
+                onChange={(e) => setCategory(e.target.value)}
+              />
+              <br />
+              <button
+                value="Fiction"
+                onClick={(e) => handleSubmit()}
+                className="add_btn"
+              >
+                Add
+              </button>
+              <br />
+              <br />
+            </form>,
+          ]}
+        />
       </div>
     </>
   );
