@@ -2,7 +2,7 @@
 # Read Books Management System.
 ##  Description
 Website - <link>https://wasomi-rms-fr.netlify.app/</Link>
-This is a library management web application which allows users to sign up, search and select their desired genre of books and add it to their shelves. This web application has a variety of categories with multiple books that can be chosen by the user at his or her convenience. 
+This is a Book Read management web application which allows users to sign up, sort and select their desired genre of books and add it to their shelves. This web application has a variety of categories with multiple books that can be chosen by the user at his or her convenience. 
 
 ---
 ## Technologies Used
