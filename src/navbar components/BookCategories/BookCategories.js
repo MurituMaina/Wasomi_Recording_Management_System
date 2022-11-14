@@ -65,7 +65,8 @@ const BookCategories = () => {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(newData),
     }).then(() => console.log("Book added to bookList"));
-
+    setTitle("")
+    setCategory("")
     // navigate("/BookCategories");
   };
   return (

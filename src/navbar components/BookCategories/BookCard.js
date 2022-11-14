@@ -29,6 +29,18 @@ const BookCard = ({ categories }) => {
     navigate("/MyBook");
   };
 
+  function handleDeleteBook() {
+    const booksUrl = `http://localhost:9292/book/${book_id}`;
+    
+     fetch(booksUrl, {
+       method: "DELETE",
+       headers: { "Content-Type": "application/json" }
+     }).then(() => {
+       console.log("Book added to shelf");
+     });
+
+  }
+
   return (
     <table>
       <thead>
@@ -66,6 +78,18 @@ const BookCard = ({ categories }) => {
                   }}
                 >
                   Read
+                </button>
+              </td>
+              <td>
+                <button
+                  className="delete"
+                  onClick={() => {
+                    setBookId(book.id);
+                    console.log(book_id);
+                    handleDeleteBook();
+                  }}
+                >
+                  Delete
                 </button>
               </td>
             </tr>
