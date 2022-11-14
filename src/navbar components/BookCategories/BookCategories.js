@@ -5,7 +5,6 @@ import { useState } from "react";
 import { useEffect } from "react";
 
 const urlBooks = "http://localhost:9292/books";
-const urlBooksUniq = "http://localhost:9292/books/all";
 
 const BookCategories = () => {
   const [categories, setCategories] = useState([]);
@@ -14,7 +13,7 @@ const BookCategories = () => {
     fetch(urlBooks)
       .then((resp) => resp.json())
       .then((data) => {
-        return setCategories(data);
+         setCategories(data);
       });
   }, []);
   const handleMenuAll = () => {
@@ -82,7 +81,8 @@ const BookCategories = () => {
       </div>
 
       <div>
-        {categories.forEach((book) => {
+        {console.log(categories) &&
+          categories.map((book) => {
           return <BookCard key={book.id} book={book} />;
         })}
       </div>

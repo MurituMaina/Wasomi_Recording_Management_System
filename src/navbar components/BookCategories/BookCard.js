@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router";
 
-const BookCard = ({ categories }) => {
+const BookCard = ({ book }) => {
   const navigate = useNavigate();
   const [title, setBookTitle] = useState("");
   const [category, setBookCategory] = useState("");
@@ -14,7 +14,7 @@ const BookCard = ({ categories }) => {
   const addBookToShelf = () => {
     console.log("working before click");
     const shelfUrl = "http://localhost:9292/shelves";
-    const newShelf = { title,category, book_id, user_id };
+    const newShelf = { title, category, book_id, user_id };
     console.log(title, category, book_id, user_id);
 
     console.log(newShelf);
@@ -39,7 +39,7 @@ const BookCard = ({ categories }) => {
         </tr>
       </thead>
       <tbody>
-        {categories.map((book, index) => {
+        {book.map((book, index) => {
           return (
             <tr key={index}>
               <td>{book.title}</td>
@@ -47,18 +47,14 @@ const BookCard = ({ categories }) => {
               <td>
                 <button
                   onClick={(e) => {
-                     console.log(book.title);
-                     console.log(book.category);
-                     console.log(book.id);
-                     setBookTitle(book.title)
-                      setBookCategory(book.category)
-                      setBookId(book.id)
-                      setUserId(1)
-                    return (
-                     
-                      
-                      addBookToShelf()
-                    );
+                    console.log(book.title);
+                    console.log(book.category);
+                    console.log(book.id);
+                    setBookTitle(book.title);
+                    setBookCategory(book.category);
+                    setBookId(book.id);
+                    setUserId(1);
+                    return addBookToShelf();
                   }}
                 >
                   Read
