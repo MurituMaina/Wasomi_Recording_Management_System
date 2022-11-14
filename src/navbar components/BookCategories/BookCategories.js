@@ -7,7 +7,7 @@ import { useEffect } from "react";
 const urlBooks = "http://localhost:9292/books";
 
 const BookCategories = () => {
-  const [categories, setCategories] = useState({});
+  const [categories, setCategories] = useState([]);
   // const [books, setBooks] = useState([]);
   useEffect(() => {
     // function setCategories(data) {
