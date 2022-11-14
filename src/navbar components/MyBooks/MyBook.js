@@ -1,6 +1,6 @@
 import "./myBook.css";
 import { useEffect, useState } from "react";
-import { Navigate } from "react-router";
+// import { Navigate } from "react-router";
 
 const MyBook = () => {
   const [books, setBooks] = useState([]);
@@ -20,11 +20,11 @@ const MyBook = () => {
     })
       .then((res) => res.json())
       .then((data) => console.log(data));
-      fetch("http://localhost:9292/shelves")
-        .then((res) => res.json())
-        .then((data) => {
-          return setBooks(data);
-        });
+    fetch("http://localhost:9292/shelves")
+      .then((res) => res.json())
+      .then((data) => {
+        return setBooks(data);
+      });
   }
   return (
     <div className="myBookPage">
@@ -48,7 +48,8 @@ const MyBook = () => {
                   <td>
                     <button
                       onClick={(e) => {
-                        return setBookId(book.id), deleteBooks();
+                        setBookId(book.id);
+                        return  deleteBooks();
                       }}
                       className="delete_book"
                     >
