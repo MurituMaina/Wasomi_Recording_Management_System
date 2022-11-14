@@ -1,9 +1,6 @@
 body {
     background: rgb(255, 218, 185);
 }
-.add_book_form{
-    background-color: green;
-}
 .add_book_form button{
     size: 20px;
 }

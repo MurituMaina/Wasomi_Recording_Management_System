@@ -7,7 +7,7 @@ import { useNavigate } from "react-router";
 import AddBook from "./AddBook";
 
 const urlBooks = "http://localhost:9292/books";
-const urlBooksUniq = "http://localhost:9292/books/all";
+const urlBooksUniq = "http://localhost:9292/books";
 
 const BookCategories = () => {
   const [categories, setCategories] = useState([]);
@@ -21,7 +21,7 @@ const BookCategories = () => {
       .then((data) => {
         return setCategories(data);
       });
-  }, [categories]);
+  }, []);
   const handleMenuAll = () => {
     fetch(urlBooks)
       .then((resp) => resp.json())
@@ -30,7 +30,7 @@ const BookCategories = () => {
         setCategories(data);
       });
   };
-  const handleMenuOne = () => {
+  const handleScience = () => {
     fetch(`${urlBooksUniq}/Science`)
       .then((resp) => resp.json())
       .then((data) => {
@@ -39,7 +39,7 @@ const BookCategories = () => {
       });
   };
 
-  const handleMenuTwo = () => {
+  const handleFiction = () => {
     fetch(`${urlBooksUniq}/Fiction`)
       .then((resp) => resp.json())
       .then((data) => {
@@ -49,7 +49,7 @@ const BookCategories = () => {
       });
   };
 
-  const handleMenuThree = () => {
+  const handleRomantic = () => {
     fetch(`${urlBooksUniq}/Romantic`)
       .then((resp) => resp.json())
       .then((data) => {
@@ -85,13 +85,13 @@ const BookCategories = () => {
             <button className="booklist" onClick={handleMenuAll}>
               All
             </button>,<br />,
-            <button className="booklist" onClick={handleMenuOne}>
+            <button className="booklist" onClick={handleScience}>
               Science
             </button>,<br />,
-            <button value="Science" onClick={handleMenuTwo}>
+            <button value="Science" onClick={handleFiction}>
               Fiction
             </button>,<br />,
-            <button value="Fiction" onClick={handleMenuThree}>
+            <button value="Fiction" onClick={handleRomantic}>
               Romantic
             </button>,
           ]}
