@@ -5,17 +5,19 @@ import { useState } from "react";
 import { useEffect } from "react";
 
 const urlBooks = "http://localhost:9292/books";
+const urlBooksUniq = "http://localhost:9292/books/all";
 
 const BookCategories = () => {
   const [categories, setCategories] = useState([]);
   // const [books, setBooks] = useState([]);
   useEffect(() => {
-    // function setCategories(data) {
-    //   return data.map((key) => (
-    //     console.log(key)
-    //   ))
-    // }
-
+    fetch(urlBooks)
+      .then((resp) => resp.json())
+      .then((data) => {
+        return setCategories(data);
+      });
+  }, []);
+  const handleMenuAll = () => {
     fetch(urlBooks)
       .then((resp) => resp.json())
       .then((data) => {
@@ -26,11 +28,9 @@ const BookCategories = () => {
           return setCategories(data);
         });
       });
-  }, []);
-
-  const handleMenuOne = () => {
-    fetch(`${urlBooks/"Science"}`)
-    // fetch(urlBooks)
+  };
+  const handleScience = () => {
+    fetch(`${urlBooks}/Science`)
       .then((resp) => resp.json())
       .then((data) =>
         // setCategories(data)
@@ -38,8 +38,8 @@ const BookCategories = () => {
       );
   };
 
-  const handleMenuTwo = () => {
-    fetch(urlBooks)
+  const handleFiction = () => {
+    fetch(`${urlBooks}/Fiction`)
       .then((resp) => resp.json())
       .then((data) =>
         // setCategories(data)
@@ -47,8 +47,8 @@ const BookCategories = () => {
       );
   };
 
-  const handleMenuThree = () => {
-    fetch(urlBooks)
+  const handleRomantic = () => {
+    fetch(`${urlBooks}/Romantic`)
       .then((resp) => resp.json())
       .then(
         (data) =>
@@ -65,17 +65,16 @@ const BookCategories = () => {
         <Dropdown
           trigger={<button className="dropdown_btn">Categories</button>}
           menu={[
-            <button onClick={handleMenuOne}>Science</button>,
-            <button
-              value="Science"
-              onClick={handleMenuTwo}
-            >
+            <button className="booklist" onClick={handleMenuAll}>
+              All
+            </button>,<br />,
+            <button className="booklist" onClick={handleScience}>
+              Science
+            </button>,<br />,
+            <button value="Science" onClick={handleFiction}>
               Fiction
-            </button>,
-            <button
-              value="Fiction"
-              onClick={handleMenuThree}
-            >
+            </button>,<br />,
+            <button value="Fiction" onClick={handleRomantic}>
               Romantic
             </button>,
           ]}
