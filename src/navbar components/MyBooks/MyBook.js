@@ -25,6 +25,7 @@ const MyBook = () => {
         .then((data) => {
           return setBooks(data);
         });
+        Navigate()
   }
   return (
     <div className="myBookPage">
@@ -48,7 +49,7 @@ const MyBook = () => {
                   <td>
                     <button
                       onClick={(e) => {
-                        return setBookId(book.id), deleteBooks();
+                        return (setBookId(book.id), deleteBooks());
                       }}
                       className="delete_book"
                     >
