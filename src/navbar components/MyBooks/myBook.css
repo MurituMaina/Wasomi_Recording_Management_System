@@ -1,12 +1,6 @@
 body {
     background: rgb(255, 218, 185);
 }
-<<<<<<< HEAD
-/* .add_book_form{
-    background-color: green;
-} */
-=======
->>>>>>> 5c43430b691d7bf2eb57f087d92490e222e0a3d9
 .add_book_form button{
     size: 20px;
 }
