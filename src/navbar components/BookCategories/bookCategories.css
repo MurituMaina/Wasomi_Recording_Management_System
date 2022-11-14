@@ -13,6 +13,13 @@
 
 }
 
+/* .booklist button{
+  padding:20px;
+  
+   background-color: yellow;
+} */
+
+
 .booklist h1 {
   text-align: center;
   color: black;
@@ -74,7 +81,8 @@ table {
 .add_btn {
   font-size: 10px;
 }
-.add_book_form{
+
+.add_book_form {
   /* width: 30%; */
   margin-top: 20px;
 }
@@ -88,6 +96,11 @@ table {
   float: right;
   text-align: center;
   border-radius: 10px;
+}
+
+.add_book_form .addBook {
+  margin-top: 60px;
+  margin-left: 400px;
 }
 
 .add_book_form h2,

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router";
 
-const BookCard = ({ book }) => {
+const BookCard = ({ books }) => {
   const navigate = useNavigate();
   const [title, setBookTitle] = useState();
   const [category, setBookCategory] = useState();
@@ -36,8 +36,10 @@ const BookCard = ({ book }) => {
        method: "DELETE",
        headers: { "Content-Type": "application/json" }
      }).then(() => {
-       console.log("Book added to shelf");
+       console.log("Book Removed from List");
      });
+     navigate("/BookCategories");
+
 
   }
 
@@ -51,7 +53,7 @@ const BookCard = ({ book }) => {
         </tr>
       </thead>
       <tbody>
-        {book.map((book, index) => {
+        {books.map((book, index) => {
           return (
             <tr key={index}>
               <td>{book.title}</td>

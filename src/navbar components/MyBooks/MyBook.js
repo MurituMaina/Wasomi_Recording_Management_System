@@ -49,7 +49,7 @@ const MyBook = () => {
                     <button
                       onClick={(e) => {
                         setBookId(book.id);
-                        return  deleteBooks();
+                        return deleteBooks();
                       }}
                       className="delete_book"
                     >

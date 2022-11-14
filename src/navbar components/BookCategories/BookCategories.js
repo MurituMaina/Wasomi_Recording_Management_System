@@ -3,17 +3,20 @@ import BookCard from "./BookCard";
 import * as React from "react";
 import { useState } from "react";
 import { useEffect } from "react";
+import AddBook from "./AddBook";
+import { Navigate } from "react-router";
 
 const urlBooks = "http://localhost:9292/books";
 
 const BookCategories = () => {
   const [categories, setCategories] = useState([]);
-  // const [books, setBooks] = useState([]);
+  const [category, setCategory] = useState();
+  const [title, setTitle] = useState();
   useEffect(() => {
     fetch(urlBooks)
       .then((resp) => resp.json())
       .then((data) => {
-         setCategories(data);
+        setCategories(data);
       });
   }, []);
   const handleMenuAll = () => {
@@ -49,8 +52,7 @@ const BookCategories = () => {
   const handleRomantic = () => {
     fetch(`${urlBooks}/Romantic`)
       .then((resp) => resp.json())
-      .then(
-        (data) =>
+      .then((data) =>
         // setCategories(data)
         console.log(data)
       );
@@ -65,9 +67,9 @@ const BookCategories = () => {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(newData),
     }).then(() => console.log("Book added to bookList"));
-    setTitle("")
-    setCategory("")
-    // navigate("/BookCategories");
+    setTitle("");
+    setCategory("");
+    Navigate("/BookCategories");
   };
   return (
     <>
@@ -94,11 +96,11 @@ const BookCategories = () => {
       </div>
 
       <div>
-        <BookCard categories={categories} />
+        <BookCard books={categories} />
       </div>
       <div>
         <AddBook
-          trigger={<button className="add_book_form">Add Book</button>}
+          trigger={<button className="add_book_form addBook">Add Book</button>}
           form={[
             <form
               onSubmit={(e) => {
